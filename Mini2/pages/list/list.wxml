@@ -1,0 +1,62 @@
+<!--pages/list/list.wxml-->
+<view class="content">
+	<text class="title">演出歌单</text>
+	<view class="border">
+		<view class="city-text">上海场</view>
+		<view class="line"></view>
+		<scroll-view scroll-y style="height: 470rpx; margin-left: 20rpx;">
+			<view class="cd-grid">
+				<view class="item" wx:for="{{cdSHlist1}}" wx:key="id" data-id="{{item.id}}" bindtap="switchSongSH"><image mode="aspectFit" class="image" src="{{item.image}}"></image><view class="text">{{item.name}}</view></view>
+			</view>
+			<view class="cd-grid">
+				<view class="item" wx:for="{{cdSHlist2}}" wx:key="id">
+					<!-- <navigator url="/pages/lyrics/lyrics"> -->
+						<image mode="aspectFit" class="image" src="{{item.image}}"></image>
+                	<!-- </navigator> -->
+				<view class="text">{{item.name}}</view>
+				</view>
+			</view>
+			<view class="cd-grid">
+				<view class="item" wx:for="{{cdSHlist3}}" wx:key="id"><image mode="aspectFit" class="image" src="{{item.image}}"></image><view class="text">{{item.name}}</view></view>
+			</view>
+			<view class="cd-grid">
+				<view class="item" wx:for="{{cdSHlist4}}" wx:key="id"><image mode="aspectFit" class="image" src="{{item.image}}"></image><view class="text">{{item.name}}</view></view>
+			</view>
+		</scroll-view>
+	</view>
+	<view class="border">
+		<view class="city-text">长沙场</view>
+		<view class="line"></view>
+		<scroll-view scroll-y style="height: 470rpx; margin-left: 20rpx;">
+			<view class="cd-grid">
+				<view class="item" wx:for="{{cdCSlist1}}" wx:key="id"><image mode="aspectFit" class="image" src="{{item.image}}"></image><view class="text">{{item.name}}</view></view>
+			</view>
+			<view class="cd-grid">
+				<view class="item" wx:for="{{cdCSlist2}}" wx:key="id"><image mode="aspectFit" class="image" src="{{item.image}}"></image><view class="text">{{item.name}}</view></view>
+			</view>
+		</scroll-view>
+	</view>
+	<view class="border">
+		<view class="city-text">南京场</view>
+		<view class="line"></view>
+		<scroll-view scroll-y style="height: 470rpx; margin-left: 20rpx;">
+			<view class="cd-grid">
+				<view class="item" wx:for="{{cdNJlist1}}" wx:key="id"><image mode="aspectFit" class="image" src="{{item.image}}"></image><view class="text">{{item.name}}</view></view>
+			</view>
+		</scroll-view>
+	</view>
+
+	<popup id='popup' index="{{curSongSH}}" btn_last='上一首' btn_next='下一首' bind:error="_gotolast" bind:success="_gotonext" bind:close="_close">
+	</popup>
+	<!-- <mp-half-screen-dialog
+		bindbuttontap="buttontap"
+		show="{{show}}"
+		maskClosable="{{false}}" 
+		title="半屏弹窗" 
+		desc="Yeah oh na oh na oh na \n Yeah oh na oh na oh na Cold I’m just walking on my road  I’m just do it on my own  Why so god damn cold  I feel  Cold"
+		tips="辅助提示内容，可根据实际需要安排"
+		buttons="{{buttons}}">
+	</mp-half-screen-dialog>
+	<button class="weui-btn" type="primary" bindtap="open">Open</button> -->
+</view>
+
